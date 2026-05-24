@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+from joblib import load
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -162,7 +162,7 @@ box-shadow:0 0 25px rgba(99,102,241,.35);
 # ─── LOAD MODEL & DATA ─────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    return joblib.load("logistic.pkl")
+    return load("logistic.pkl")
 
 @st.cache_data
 def load_data():
